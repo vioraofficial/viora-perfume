@@ -5,25 +5,36 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>VIORA | Luxury Perfumes</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
 <style>
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
-    font-family: "Arial", sans-serif;
-    background: #0b0b0f;
+    background: #07070a;
     color: white;
+    font-family: 'Montserrat', sans-serif;
 }
 
 /* NAVBAR */
 nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 18px 60px;
     display: flex;
     justify-content: space-between;
-    padding: 20px 60px;
-    background: rgba(0,0,0,0.6);
-    position: fixed;
-    width: 100%;
+    align-items: center;
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(12px);
+    z-index: 1000;
 }
 
 nav h1 {
+    font-family: 'Playfair Display', serif;
     color: #d4af37;
     letter-spacing: 4px;
 }
@@ -31,13 +42,20 @@ nav h1 {
 nav a {
     color: white;
     text-decoration: none;
-    margin-left: 20px;
+    margin-left: 25px;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+nav a:hover {
+    opacity: 1;
+    color: #d4af37;
 }
 
 /* HERO */
 .hero {
     height: 100vh;
-    background: url('https://images.unsplash.com/photo-1594035910387-fea47794261f') center/cover;
+    background: url('https://images.unsplash.com/photo-1615634260167-c8cdede054de?auto=format&fit=crop&w=1800&q=80') center/cover;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -46,62 +64,124 @@ nav a {
 }
 
 .hero h2 {
-    font-size: 60px;
+    font-family: 'Playfair Display', serif;
+    font-size: 80px;
+    margin: 0;
     color: #d4af37;
+    letter-spacing: 6px;
 }
 
 .hero p {
-    font-size: 20px;
     max-width: 600px;
+    font-size: 18px;
+    opacity: 0.9;
 }
 
-/* BUTTON */
 .btn {
-    margin-top: 20px;
-    padding: 12px 25px;
+    margin-top: 25px;
+    padding: 14px 30px;
     background: #d4af37;
     color: black;
     border: none;
-    cursor: pointer;
     font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-/* PRODUCTS */
+.btn:hover {
+    transform: scale(1.05);
+}
+
+/* SECTION */
 .section {
-    padding: 80px 60px;
+    padding: 120px 60px;
     text-align: center;
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeIn 1.2s ease forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .section h2 {
+    font-family: 'Playfair Display', serif;
     color: #d4af37;
-    margin-bottom: 40px;
+    font-size: 42px;
+    margin-bottom: 10px;
 }
 
+/* PRODUCTS */
 .products {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
 }
 
 .card {
-    background: #1a1a1f;
-    padding: 20px;
-    width: 250px;
-    border-radius: 10px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(212,175,55,0.2);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: 0.4s;
+    backdrop-filter: blur(8px);
+}
+
+.card:hover {
+    transform: translateY(-12px);
+    border-color: #d4af37;
 }
 
 .card img {
     width: 100%;
-    border-radius: 10px;
+    height: 300px;
+    object-fit: cover;
+}
+
+.card h3 {
+    color: #d4af37;
+    margin: 15px 0 5px;
+    font-family: 'Playfair Display', serif;
+}
+
+.card p {
+    font-size: 14px;
+    color: #ccc;
+    padding: 0 10px 15px;
+}
+
+.whatsapp {
+    display: inline-block;
+    margin-bottom: 15px;
+    padding: 10px 16px;
+    background: #25D366;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 13px;
+}
+
+/* ABOUT */
+.about {
+    max-width: 800px;
+    margin: auto;
+    color: #ccc;
+    font-size: 16px;
+    line-height: 1.8;
 }
 
 /* FOOTER */
 footer {
-    background: black;
     text-align: center;
-    padding: 20px;
+    padding: 25px;
+    background: black;
     color: gray;
+    margin-top: 50px;
 }
 </style>
 </head>
@@ -111,38 +191,41 @@ footer {
 <nav>
     <h1>VIORA</h1>
     <div>
-        <a href="#">Home</a>
-        <a href="#products">Perfumes</a>
+        <a href="#products">Collection</a>
         <a href="#about">About</a>
     </div>
 </nav>
 
 <div class="hero">
     <h2>VIORA</h2>
-    <p>Luxury perfumes crafted for elegance, confidence, and timeless attraction.</p>
-    <button class="btn">Explore Collection</button>
+    <p>Luxury fragrances crafted for elegance, identity, and timeless confidence.</p>
+    <button class="btn" onclick="document.getElementById('products').scrollIntoView()">Explore Collection</button>
 </div>
 
 <div id="products" class="section">
-    <h2>Our Perfumes</h2>
+    <h2>Signature Collection</h2>
+
     <div class="products">
 
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1615634260167-c8cdede054de">
+            <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=900&q=80">
             <h3>VIORA Noir</h3>
-            <p>Dark, bold & powerful scent.</p>
+            <p>Deep, bold fragrance for powerful presence.</p>
+            <a class="whatsapp" href="https://wa.me/923212472896" target="_blank">Order Now</a>
         </div>
 
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1615384293360-4d3f2d1c1c7a">
+            <img src="https://images.unsplash.com/photo-1615634260367-2b3c5c4f1c1a?auto=format&fit=crop&w=900&q=80">
             <h3>VIORA Bloom</h3>
-            <p>Soft floral luxury fragrance.</p>
+            <p>Soft floral elegance with modern freshness.</p>
+            <a class="whatsapp" href="https://wa.me/923212472896" target="_blank">Order Now</a>
         </div>
 
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1615634260367-2b3c5c4f1c1a">
+            <img src="https://images.unsplash.com/photo-1615384293360-4d3f2d1c1c7a?auto=format&fit=crop&w=900&q=80">
             <h3>VIORA Gold</h3>
-            <p>Premium royal signature scent.</p>
+            <p>Royal signature scent for luxury lifestyle.</p>
+            <a class="whatsapp" href="https://wa.me/923212472896" target="_blank">Order Now</a>
         </div>
 
     </div>
@@ -150,14 +233,15 @@ footer {
 
 <div id="about" class="section">
     <h2>About VIORA</h2>
-    <p>
-        VIORA is a modern luxury perfume concept designed for elegance, identity, and confidence.
-        Crafted to feel international, premium, and timeless.
+    <p class="about">
+        VIORA is a premium luxury perfume house inspired by elegance, identity, and modern sophistication.
+        Each fragrance is designed to represent confidence, attraction, and timeless style.
+        Built for a global luxury experience.
     </p>
 </div>
 
 <footer>
-    © 2026 VIORA Perfumes | Crafted with Luxury Vision
+    © 2026 VIORA | Luxury Perfume House
 </footer>
 
 </body>
