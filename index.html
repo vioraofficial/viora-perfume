@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VIORA | Luxury Perfumes</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: "Arial", sans-serif;
+    background: #0b0b0f;
+    color: white;
+}
+
+/* NAVBAR */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 60px;
+    background: rgba(0,0,0,0.6);
+    position: fixed;
+    width: 100%;
+}
+
+nav h1 {
+    color: #d4af37;
+    letter-spacing: 4px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+/* HERO */
+.hero {
+    height: 100vh;
+    background: url('https://images.unsplash.com/photo-1594035910387-fea47794261f') center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 60px;
+    color: #d4af37;
+}
+
+.hero p {
+    font-size: 20px;
+    max-width: 600px;
+}
+
+/* BUTTON */
+.btn {
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: #d4af37;
+    color: black;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* PRODUCTS */
+.section {
+    padding: 80px 60px;
+    text-align: center;
+}
+
+.section h2 {
+    color: #d4af37;
+    margin-bottom: 40px;
+}
+
+.products {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: #1a1a1f;
+    padding: 20px;
+    width: 250px;
+    border-radius: 10px;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* FOOTER */
+footer {
+    background: black;
+    text-align: center;
+    padding: 20px;
+    color: gray;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <h1>VIORA</h1>
+    <div>
+        <a href="#">Home</a>
+        <a href="#products">Perfumes</a>
+        <a href="#about">About</a>
+    </div>
+</nav>
+
+<div class="hero">
+    <h2>VIORA</h2>
+    <p>Luxury perfumes crafted for elegance, confidence, and timeless attraction.</p>
+    <button class="btn">Explore Collection</button>
+</div>
+
+<div id="products" class="section">
+    <h2>Our Perfumes</h2>
+    <div class="products">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1615634260167-c8cdede054de">
+            <h3>VIORA Noir</h3>
+            <p>Dark, bold & powerful scent.</p>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1615384293360-4d3f2d1c1c7a">
+            <h3>VIORA Bloom</h3>
+            <p>Soft floral luxury fragrance.</p>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1615634260367-2b3c5c4f1c1a">
+            <h3>VIORA Gold</h3>
+            <p>Premium royal signature scent.</p>
+        </div>
+
+    </div>
+</div>
+
+<div id="about" class="section">
+    <h2>About VIORA</h2>
+    <p>
+        VIORA is a modern luxury perfume concept designed for elegance, identity, and confidence.
+        Crafted to feel international, premium, and timeless.
+    </p>
+</div>
+
+<footer>
+    © 2026 VIORA Perfumes | Crafted with Luxury Vision
+</footer>
+
+</body>
+</html>
